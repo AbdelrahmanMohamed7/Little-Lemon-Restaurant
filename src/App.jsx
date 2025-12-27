@@ -1,10 +1,12 @@
-import './App.css'
+import './App.css';
+import Nav from './Nav';
 
 function App() {
-return (
-<div>
-  <h1>HomePage</h1>
-</div>
-)}
+  return (
+    <>
+      <Nav />
+    </>
+  );
+}
 
-export default App
+export default App;
