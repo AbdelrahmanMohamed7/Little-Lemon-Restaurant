@@ -4,6 +4,7 @@ import Homepage from './components/Homepage';
 import BookingPage from './components/BookingPage';
 import { Routes, Route } from 'react-router-dom';
 import About from './components/About';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/booking' element={<BookingPage/>}/>
         <Route path='About' element={<About/>}/>
       </Routes>
+      <Footer />
     </>
   );
 }

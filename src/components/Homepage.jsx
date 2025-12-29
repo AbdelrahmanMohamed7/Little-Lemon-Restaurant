@@ -1,3 +1,5 @@
+import React from "react"
+
 function Homepage() {
     return (
         <main>
@@ -7,4 +9,4 @@ function Homepage() {
     )
 }
 
-export default Homepage
+export default Homepage;
