@@ -6,7 +6,7 @@ function Homepage() {
     return (
         <main className="hero-grid">
             <h1>Welcome to Little Lemon</h1>
-            <p>Mediterranean flavors in the heart of Chicago.</p>
+            <p>We are a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist. From our hand-picked ingredients to our classic wood-fired oven, we bring the sun-drenched flavors of the coast right to the streets of Chicago.</p>
             <Link to="/booking" className="hero-button">
                 Reserve a Table
             </Link>
