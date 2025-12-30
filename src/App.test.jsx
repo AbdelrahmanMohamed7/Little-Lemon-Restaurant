@@ -1,21 +1,25 @@
 import { expect, test } from "vitest";
 import { updateTimes, intializeTimes } from './App';
 
-test('initializeTimes returns the correct initial array of times', () => {
-    const expectedValue = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+test('initializeTimes returns a dynamic array of times from the API', () => {
     const initialValue = intializeTimes();
 
-    // Checks if the arrays are identical
-    expect(initialValue).toEqual(expectedValue);
+    // Check if it is an array
+    expect(Array.isArray(initialValue)).toBe(true);
+
+    // Check if the array has at least one time slot in it
+    expect(initialValue.length).toBeGreaterThan(0);
 });
 
-test('updateTimes returns the same value provided in the state', () => {
-    const currentState = ["17:00", "18:00"];
-    const action = { type: 'UPDATE_TIMES', date: '2025-12-01' };
-
-    // Based on your current App.jsx logic, it returns the full list regardless of action
-    const expectedValue = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+test('updateTimes returns a dynamic array based on the dispatched date', () => {
+    const currentState = [];
+    const action = { type: 'UPDATE_TIMES', date: '2025-12-30' };
 
     const result = updateTimes(currentState, action);
-    expect(result).toEqual(expectedValue);
+
+    // Check if it returns an array (fetched from fetchAPI)
+    expect(Array.isArray(result)).toBe(true);
+
+    // Check if it is not empty
+    expect(result.length).toBeGreaterThan(0);
 });

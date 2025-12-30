@@ -5,6 +5,7 @@ import BookingForm from "./BookingForm.jsx";
 test('Renders the BookingForm heading', () => {
     const mockAvailableTimes = ["17:00", "18:00"];
     const mockDispatch = vi.fn(); // Use vi.fn() instead of jest.fn() in Vite
+    const mockSubmit = vi.fn();
 
     render(<BookingForm availableTimes={mockAvailableTimes} dispatch={mockDispatch} />);
 
