@@ -1,3 +1,18 @@
+html, body, #root {
+    height: 100%;
+    margin: 0;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
 ul {
     list-style: none;
     padding: 0;
@@ -37,7 +52,7 @@ nav a {
 footer {
     background-color: #47906c;
     padding: 50px 0;
-    margin-top: 50px;
+    width: 100%;
 }
 
 footer section {
@@ -84,4 +99,200 @@ footer a {
 nav a:hover,
 footer a:hover {
     color: #F4CE14;
+}
+
+.confirmation-header {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-grid {
+    background-color: #495E57;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "title image"
+        "text  image"
+        "button image";
+    padding: 50px;
+    align-items: center;
+    align-self: auto;
+    color: #ffffff;
+    gap: 10px;
+}
+
+.hero-grid h1 {
+    grid-area: title;
+    color: #ffffff;
+    margin: 0;
+}
+
+.hero-grid p {
+    grid-area: text;
+    font-size: 1.2rem;
+}
+
+.hero-grid img {
+    grid-area: image;
+    width: 300px;
+    justify-self: end;
+    border-radius: 16px;
+}
+
+.hero-button {
+    grid-area: button;
+    background-color: #F4CE14;
+    color: #333;
+    padding: 15px 30px;
+    border-radius: 16px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    width: fit-content;
+    text-decoration: none;
+    transition: 0.3s;
+    border: none;
+}
+
+.hero-button:hover {
+    background-color: #EDEFEE;
+    color: #495E57;
+    transform: scale(1.05);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "heading photo"
+        "description photo";
+    padding: 60px;
+    gap: 20px;
+    align-items: center;
+    background-color: #495E57;
+}
+
+.about-grid h1 {
+    grid-area: heading;
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.about-grid p {
+    grid-area: description;
+    color: #ffffff;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.about-grid img {
+    grid-area: photo;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 16px;
+    justify-self: center;
+}
+
+.booking-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "title form"
+        "text  form";
+    padding: 60px;
+    gap: 40px;
+    background-color: #495E57;
+    color: #EDEFEE;
+    min-height: 80vh;
+}
+
+.booking-grid h1 {
+    grid-area: title;
+    color: #F4CE14;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.booking-grid p {
+    grid-area: text;
+    font-size: 1.2rem;
+}
+
+form {
+    grid-area: form;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #EDEFEE;
+    padding: 30px;
+    border-radius: 16px;
+    color: #333;
+    max-width: 400px;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: -5px;
+}
+
+form input, form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+form input[type="submit"] {
+    background-color: #F4CE14;
+    color: #333;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+form input[type="submit"]:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+form input[type="submit"]:hover:not(:disabled) {
+    background-color: #495E57;
+    color: white;
+}
+
+.confirmed-grid {
+    display: grid;
+    place-content: center;
+    text-align: center;
+    background-color: #495E57;
+    color: #EDEFEE;
+    min-height: 70vh;
+    padding: 20px;
+}
+
+.confirmed-grid h1 {
+    color: #F4CE14;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.confirmed-grid p {
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .hero-grid, .about-grid, .booking-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: none;
+        text-align: center;
+    }
+    .hero-grid img, .about-grid img {
+        justify-self: center;
+        width: 100%;
+    }
 }

@@ -3,7 +3,7 @@ import BookingForm from "./BookingForm"
 
 function BookingPage({availableTimes, dispatch, submitForm}) {
     return (
-        <main>
+        <main className="booking-grid">
             <h1>Reserve a Table</h1>
             <p>Please fill out the form to book your table.</p>
             <BookingForm

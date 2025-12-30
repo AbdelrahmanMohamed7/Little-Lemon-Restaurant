@@ -25,7 +25,7 @@ const Footer = () => {
                 <article>
                     <h3>Contact</h3>
                     <ul>
-                        <li>123 Food St, Cairo</li>
+                        <li>123 Food St, Chicago</li>
                         <li>(555) 123-4567</li>
                         <li>info@littlelemon.com</li>
                     </ul>
