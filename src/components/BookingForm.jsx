@@ -6,6 +6,16 @@ const BookingForm = ({availableTimes, dispatch, submitForm}) => {
     const [guests, setGuests] = useState(1);
     const [occasion, setOccasion] = useState("Birthday");
 
+    const getIsFormValid = () => {
+        return (
+            date &&
+            time &&
+            guests >= 1 &&
+            guests <= 10 &&
+            occasion
+        );
+    };
+
     const handleDateChange = (e) => {
         const newDate = e.target.value
         setDate(newDate);
@@ -47,7 +57,8 @@ const BookingForm = ({availableTimes, dispatch, submitForm}) => {
                 max="10"
                 id="guests"
                 value={guests}
-                onChange={(e) => setGuests(e.target.value)}/>
+                onChange={(e) => setGuests(e.target.value)}
+                required/>
 
             <label htmlFor="occasion">Occasion</label>
             <select
@@ -58,7 +69,7 @@ const BookingForm = ({availableTimes, dispatch, submitForm}) => {
                 <option>Anniversary</option>
             </select>
 
-            <input type="submit" value="Make Your reservation"/>
+            <input type="submit" value="Make Your reservation" disabled={!getIsFormValid()} aria-label="onClick"/>
         </form>
     )
 
